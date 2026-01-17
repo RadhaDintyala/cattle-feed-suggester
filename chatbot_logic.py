@@ -14,10 +14,8 @@ def chatbot_response(gobar, eating, activity, milk, temp, dung, body_cond):
     Returns:
         str: A response string based on the health parameters
     """
-    # Basic health assessment logic
     health_issues = []
     
-    # Check for common issues
     if eating and eating.lower() != "normal":
         health_issues.append(f"Eating abnormality detected: {eating}")
     
@@ -41,7 +39,6 @@ def chatbot_response(gobar, eating, activity, milk, temp, dung, body_cond):
     if milk and milk.lower() != "normal":
         health_issues.append(f"Milk production concern: {milk}")
     
-    # Generate response
     if health_issues:
         response = "Health concerns detected:\n" + "\n".join(health_issues)
         response += "\n\nRecommendation: Consult a veterinarian for proper diagnosis and treatment."
