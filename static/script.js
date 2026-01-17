@@ -12,11 +12,9 @@ function sendMessage() {
         return;
     }
 
-    // Show user input
     let chatBox = document.getElementById('chat-box');
     chatBox.innerHTML += `<div class="chat-message user-msg">You: Gobar=${gobar}, Eating=${eating}, Activity=${activity}, Milk=${milk}, Temp=${temp}, Dung=${dung}, Body=${body_condition}</div><div class="clearfix"></div>`;
 
-    // Clear inputs
     document.getElementById('gobar').value = '';
     document.getElementById('eating').value = '';
     document.getElementById('activity').value = '';
