@@ -21,5 +21,4 @@ def get_response():
     response = chatbot_response(gobar, eating, activity, milk, temp, dung, body_cond)
     return jsonify({'response': response})
 
-if __name__ == "__main__":
-    app.run()
+# ❌ DO NOT add app.run() for Vercel
