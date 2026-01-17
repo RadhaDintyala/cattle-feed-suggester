@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cattle Feed Chatbot</title>
+    <script>
+        async function sendData() {
+            const data = {
+                gobar: document.getElementById('gobar').value,
+                eating: document.getElementById('eating').value,
+                activity: document.getElementById('activity').value,
+                milk: document.getElementById('milk').value,
+                temp: document.getElementById('temp').value,
+                dung: document.getElementById('dung').value,
+                body_condition: document.getElementById('body_condition').value
+            };
+            
+            const response = await fetch('/get_response', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            document.getElementById('bot_response').innerText = result.response;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cattle Feed Chatbot</h1>
+
+    Gobar: <input id="gobar"><br>
+    Eating: <input id="eating"><br>
+    Activity: <input id="activity"><br>
+    Milk: <input id="milk"><br>
+    Temp: <input id="temp"><br>
+    Dung: <input id="dung"><br>
+    Body Condition: <input id="body_condition"><br>
+
+    <button onclick="sendData()">Submit</button>
+
+    <h3>Response:</h3>
+    <p id="bot_response"></p>
+</body>
+</html>
